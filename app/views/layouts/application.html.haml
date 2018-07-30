@@ -1,0 +1,27 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{name: "keywords", content: "financeiro, contas, sistema financeiro"}
+    %meta{name: "description", content: "Gaste Seguro - cadastre contas e coloque limites pra gastos"}
+    %link{ :href => "https://unpkg.com/tachyons@4.9.1/css/tachyons.min.css", :media => "screen", :rel => "stylesheet" }
+    
+    - if content_for?(:title)
+      %title= yield :title
+    - else
+      %title
+        Gaste Seguro - cadastre contas e coloque limites pra seus gastos
+
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+
+  %body{id: controller.controller_name, class: ''}
+    .main
+      = yield
+
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application'
+
+    = yield :after_js_code

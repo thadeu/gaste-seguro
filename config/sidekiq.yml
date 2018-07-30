@@ -1,0 +1,10 @@
+:concurrency: <%= ENV['SIDEKIQ_CONCURRENCY_NUMBER'] || 25 %>
+:queues:
+  - [immediate,120]
+  - [high, 100]
+  - [default, 80]
+  - [assets, 30]
+  - [import, 25]
+  - [low, 20]
+  - [scheduler, 15]
+  - [background, 10]

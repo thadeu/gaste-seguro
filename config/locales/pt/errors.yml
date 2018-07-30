@@ -1,0 +1,36 @@
+pt:
+  errors:
+    format: "<b>%{attribute}</b> <br>%{message}<br>"
+
+    messages:
+      accepted: Deve ser aceito
+      blank: Não pode ficar em branco
+      present: Deve ficar em branco
+      confirmation: Não é igual a %{attribute}
+      empty: Não pode ficar vazio
+      equal_to: Deve ser igual a %{count}
+      even: Deve ser par
+      exclusion: Não está disponível
+      greater_than: Deve ser maior que %{count}
+      greater_than_or_equal_to: Deve ser maior ou igual a %{count}
+      inclusion: Não está incluído na lista
+      invalid: Campo ou formato inválido
+      less_than: Deve ser menor que %{count}
+      less_than_or_equal_to: Deve ser menor ou igual a %{count}
+      not_a_number: Não é um número
+      not_an_integer: Não é um número inteiro
+      odd: Deve ser ímpar
+      record_invalid: 'A validação falhou: <br> %{errors}'
+      restrict_dependent_destroy:
+        one: Não é possível excluir o registro pois existe um %{record} dependente
+        many: Não é possível excluir o registro pois existem %{record} dependentes
+      taken: já está em uso
+      too_long: 'É muito longo (máximo: %{count} caracteres)'
+      too_short: 'É muito curto (mínimo: %{count} caracteres)'
+      wrong_length: não possui o tamanho esperado (%{count} caracteres)
+      other_than: deve ser diferente de %{count}
+    template:
+      body: 'Por favor, verifique o(s) seguinte(s) campo(s):'
+      header:
+        one: 'Não foi possível gravar %{model}: 1 erro'
+        other: 'Não foi possível gravar %{model}: %{count} erros.'

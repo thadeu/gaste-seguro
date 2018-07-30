@@ -1,0 +1,26 @@
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  host: <%= ENV['DATABASE_HOST'] %>
+  port: <%= ENV['DATABASE_PORT'] %>
+  database: <%= ENV['DATABASE_DATABASE'] %>
+  username: <%= ENV['DATABASE_USERNAME'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+
+development:
+  <<: *default
+
+staging:
+  <<: *default
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: <%= ENV['DATABASE_POOL'] || ENV['MAX_THREADS'] || ENV['SIDEKIQ_CONCURRENCY_NUMBER'] || 5 %>
+
+test:
+  <<: *default
+  host: <%= ENV['DATABASE_HOST'] %>
+  database: financeirosimples_test
+
+production:
+  <<: *default
+  host: <%= ENV['DATABASE_HOST'] %>
+  pool: <%= ENV['DATABASE_POOL'] || ENV['MAX_THREADS'] || ENV['SIDEKIQ_CONCURRENCY_NUMBER'] || 5 %>

@@ -1,0 +1,7 @@
+pt:
+  form:
+    add: 'Adicionar'
+    edit: 'Editar'
+    delete: 'Excluir'
+    new: 'Novo'
+    form: 'Formulário'
